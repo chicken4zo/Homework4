@@ -47,10 +47,10 @@
                                            required>
                                 </div>
                                 <div class="form-group">
-                                    <input id="password-field" type="password" class="form-control"
+                                    <input type="password" class="form-control"
                                            placeholder="Password" name="pwd" id="pwd" required>
                                     <span toggle="#password-field"
-                                          class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                          class="fa fa-fw fa-eye field-icon toggle-password" id="spanPwd"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Name" name="name" id="name"
@@ -106,16 +106,9 @@
 <script src="${pageContext.request.contextPath}/assets/js/light-bootstrap-dashboard.js?v=2.0.0 "
         type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-<script src="${pageContext.request.contextPath}/assets/js/demo.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function () {
-		// Javascript method's body can be found in assets/js/demos.js
-		demo.initDashboardPageCharts();
-
-		demo.showNotification();
-	});
-
 	const email = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/)
 	const id = RegExp(/^[a-zA-Z0-9]{3,16}$/)
 	const pass = RegExp(/^[a-zA-Z0-9]{3,16}$/)

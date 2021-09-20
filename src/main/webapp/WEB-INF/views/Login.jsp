@@ -44,11 +44,6 @@
 		<section class="ftco-section" id="form">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-md-6 text-center mb-5">
-						<h2 class="heading-section">Login #10</h2>
-					</div>
-				</div>
-				<div class="row justify-content-center">
 					<div class="col-md-6 col-lg-4">
 						<div class="login-wrap p-0">
 							<h3 class="mb-4 text-center">로그인</h3>
@@ -61,7 +56,7 @@
 								<div class="form-group">
 									<input name="pwd" id="pwd" type="password" class="form-control"
 										   placeholder="Password" required>
-									<span class="fa fa-fw fa-eye field-icon toggle-password"></span>
+									<span class="fa fa-fw fa-eye field-icon toggle-password" id="spanPwd"></span>
 								</div>
 								<div class="form-group">
 									<input type="submit" class="form-control btn btn-primary submit px-3"
@@ -78,7 +73,6 @@
 										<a href="#" style="color: #fff">Forgot Password</a>
 									</div>
 								</div>
-
 							</form>
 						</div>
 
@@ -104,16 +98,5 @@
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="${pageContext.request.contextPath}/assets/js/light-bootstrap-dashboard.js?v=2.0.0 "
 		type="text/javascript"></script>
-<script type="text/javascript">
-	const pwd = document.getElementById("pwd");
-	console.log(pwd);
-	document.querySelector(".toggle-password").addEventListener("click", function () {
-		console.log("click!");
-		pwd.type = "text";
-	});
-	// $('.toggle-password').click(function () {
-	// 	console.log('click');
-	// 	console.log($('#pwd'));
-	// });
-</script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </html>

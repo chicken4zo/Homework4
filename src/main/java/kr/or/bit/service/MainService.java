@@ -26,13 +26,12 @@ public class MainService implements Action {
                 //회원
                 request.setAttribute("text", id + " 회원님 반갑습니다");
                 if (id.equals("admin")) {
-                    request.setAttribute("link", "<a href='KoreaMemberList.do'>회원관리</a>");
+                    request.setAttribute("link", "<a href='KoreaMemberList.do' id='link'>회원관리</a>");
                 }
             } else {
                 //로그인 하지 않은 사용자
                 //메인 페이지는 회원만 볼수 있어요 (강제 링크 추가)
-                request.setAttribute("text", "JOIN US");
-                request.setAttribute("link", "<a href='KoreaMemberLoginForm.do'>JOIN US</a>");
+                request.setAttribute("login", "location.href='KoreaMemberLoginForm.do'");
             }
         } catch (IOException e) {
             e.printStackTrace();

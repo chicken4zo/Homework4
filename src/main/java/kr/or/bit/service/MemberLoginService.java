@@ -36,8 +36,22 @@ public class MemberLoginService implements Action {
 					forward.setPath("Main.do");
 				} else {
 					// ID 존재 , PWD(x)
-					forward.setPath("Main.do");
+					String msg = "";
+					String url = "";
+					msg = "일치하는 회원정보가 없습니다";
+					url = "Main.do";
+					request.setAttribute("board_msg", msg);
+					request.setAttribute("board_url", url);
+					forward.setPath("/WEB-INF/views/redirect.jsp");
 				}
+			} else {
+				String msg = "";
+				String url = "";
+				msg = "일치하는 회원정보가 없습니다";
+				url = "Main.do";
+				request.setAttribute("board_msg", msg);
+				request.setAttribute("board_url", url);
+				forward.setPath("/WEB-INF/views/redirect.jsp");
 			}
 
 		} catch (Exception e) {

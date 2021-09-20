@@ -30,9 +30,8 @@ public class LoginLogout extends HttpServlet {
             out.print("<span class=\"no-icon\">Register</span>");
             out.print("</a></li>");
             out.print("<li class=\"nav-item\">");
-            out.print("<span class=\"no-icon\">");
-            out.print("<a class=\"nav-link\" href=\"#\">");
-            out.print("<a href='KoreaMemberLoginForm.do'>Log in</a>");
+            out.print("<a class=\"nav-link\" href=\"KoreaMemberLoginForm.do\">");
+            out.print("<span class=\"no-icon\">Log in</span");
             out.print("</span></a></li>");
         }
     }

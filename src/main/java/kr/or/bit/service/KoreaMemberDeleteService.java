@@ -24,10 +24,10 @@ public class KoreaMemberDeleteService implements Action {
         String url = "";
         if (result > 0) {
             msg = "삭제하였습니다.";
-            url = "KoreaMemberDelete.do";
+            url = "KoreaMemberList.do";
         } else {
             msg = "삭제에 실패하였습니다.";
-            url = "Main.do";
+            url = "KoreaMemberList.do";
         }
 
         request.setAttribute("board_msg", msg);

@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/custom.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/liststyle.css?ver=1"/>
 </head>
 <body>
 <div class="wrapper">
@@ -39,36 +40,42 @@
 		<section class="ftco-section" id="form">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-md-6 text-center mb-5">
-						<h2 class="heading-section">Main Page</h2>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<table style="width: 400px;height: 100px;margin-left: auto;margin-right: auto">
+					<table style="width: 80%;height: 80%;margin-left: auto;margin-right: auto; margin-bottom : 100px">
 						<tr>
-							<th colspan="4">회원리스트</th>
+							<th class="list" colspan="10">회원리스트</th>
 						</tr>
 						<c:set var="memberList" value="${requestScope.memberList}"/>
 						<c:forEach var="member" items="${memberList}">
-							<tr>
-								<td width="100px">
-									<a href="#" class="memberId">${member.id}</a>
+
+							<tr class="cell">
+								<td colspan="3">
+									<a href="#" id="${member.id}" class="memberId">${member.id}</a>
 								</td>
-								<td width="100px">${member.ip}</td>
+								<td id="name" colspan="4">${member.name}</td>
 								<td>
-									<a href="KoreaMemberDelete.do?id=${member.id}">[삭제]</a>
+									<button type="button" onclick="location.href='KoreaMemberDelete.do?id=${member.id}'"
+											class="buttons">삭제
+									</button>
 								</td>
 								<td>
-									<a href="KoreaMemberEdit.do?id=${member.id}">[수정]</a>
+									<button type="button" onclick="location.href='KoreaMemberEdit.do?id=${member.id}'"
+											class="buttons">수정
+									</button>
 								</td>
 							</tr>
 						</c:forEach>
 
 					</table>
-					<form id="searchForm">
-						회원명:<input type="text" name="search" id="search">
-						<input type="button" id="submit" value="검색">
-					</form>
+					<div class="form-group">
+						<input type="text" id="search" class="form-control" placeholder="Search by name" name="search">
+						<button type="button" class="btn-search" name="search" id="submit">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+							</svg>
+						</button>
+					</div>
+					<%--						회원명:<input type="text" name="search" id="search">--%>
+					<%--						<input type="button" id="submit" value="검색">--%>
 					<div class="modal searchModal">
 						<div class="modal-content searchModalContent">
 						</div>
@@ -106,12 +113,11 @@
 <script type="text/javascript">
 
 	$('#submit').click(function () {
-		const formData = $('#searchForm').serialize();
+		const search = $("#search").val();
 		$.ajax(
 				{
-					url: "SearchMember",
+					url: "SearchMember?search=" + search,
 					type: "GET",
-					data: formData,
 					success: function (data) {
 						$(".searchModalContent").html(data);
 						$(".searchModal").fadeIn();

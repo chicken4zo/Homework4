@@ -36,3 +36,15 @@
 .invisible {
 	display: none;
 }
+
+.form-name {
+	padding-left: 20px;
+}
+
+#list {
+	text-align: center;
+}
+
+.mainText {
+	color: #FFFFFF;
+}

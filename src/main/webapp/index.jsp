@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/custom.css"/>
 </head>
 <body class="img js-fullheight" style="background-image: url(${pageContext.request.contextPath}/assets/img/bg.jpg);">
 <div class="wrapper">
@@ -37,16 +38,11 @@
         <!-- 로그인 폼 채우기 -->
         <section class="ftco-section" id="form">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section">Main Page</h2>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mainText">
                     <c:set var="text" value="${requestScope.text}"/>
                     <c:set var="link" value="${requestScope.link}"/>
-                    ${text}<br>
-                    ${link}
+                    <h1>${text}</h1><br>
+                    <h3>${link}</h3>
                 </div>
             </div>
         </section>
@@ -72,6 +68,10 @@
         type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<c:set var="login" value="${requestScope.login}"/>
+<script>
+	${login}
+</script>
 </html>
 
 

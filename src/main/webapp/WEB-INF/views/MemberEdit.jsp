@@ -40,75 +40,64 @@
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-6 text-center mb-5">
-						<h2 class="heading-section">Main Page</h2>
+						<h2 class="heading-section">Member Edit</h2>
 					</div>
 				</div>
 				<div class="row justify-content-center">
-
-					<form action="KoreaMemberEdit.do" method="post">
-
-						<h3 style="text-align: center;">회원가입</h3>
-						<div class="inputBox">
-							<table
-									style="width: 400px; height: 200px; margin-left: auto; margin-right: auto;">
+					<div class="col-md-6 col-lg-4">
+						<form action="KoreaMemberEdit.do" method="post">
+							<div>
 								<c:set var="detailmember" value="${requestScope.detailmember}"/>
+								<div class="form-group">
+									<span class="form-name">Username</span>
+									<input type="text" name="id" id="id" class="form-control" value="${detailmember.id}"
+										   readonly>
+								</div>
 
-								<tr>
-									<td>아이디</td>
-									<td>
-										<input type="text" name="id" value="${detailmember.id}" readonly>
-									</td>
-								</tr>
-								<tr>
-									<td>비번</td>
-									<td>${detailmember.pwd}</td>
-								</tr>
-								<tr>
-									<td>이름</td>
-									<td>
-										<input type="text" name="name" value="${detailmember.name}"
-											   style="background-color: yellow">
-									</td>
-								</tr>
-								<tr>
-									<td>나이</td>
-									<td>
-										<input type="text" name="age" value="${detailmember.age}"
-											   style="background-color: yellow">
-									</td>
-								</tr>
-								<tr>
-									<td>성별</td>
-									<td>
-										[${detailmember.gender}]
-										<c:set var="gender" value="${detailmember.gender.trim()}"/>
-										<input type="radio" name="gender" id="gender" value="여"
-										<c:if test="${gender eq '여'}">
-											<c:out value="checked"/>
-										</c:if>>여자
-										<input type="radio" name="gender" id="gender" value="남"
-										<c:if test="${gender eq '남'}">
-											<c:out value="checked"/>
-										</c:if>>남자
-									</td>
-								</tr>
-								<tr>
-									<td>이메일</td>
-									<td>
-										<input type="text" name="email" value="${detailmember.email}"
-											   style="background-color: yellow">
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<input type="submit" value="수정하기">
-										<a href='KoreaMemberList.do'>리스트이동</a></td>
-							</table>
+								<div class="form-group">
+									<span class="form-name">Password</span>
+									<input type="password" class="form-control"
+										   name="pwd" id="pwd" value="${detailmember.pwd}">
+									<span toggle="#password-field"
+										  class="fa fa-fw fa-eye field-icon toggle-password" id="spanPwd"
+										  style="top: 54px"></span>
+								</div>
 
-						</div>
-					</form>
+								<div class="form-group">
+									<span class="form-name">Name</span><input type="text" name="name" id="name"
+																			  class="form-control"
+																			  value="${detailmember.name}">
+								</div>
+
+								<div class="form-group">
+									<span class="form-name">Age</span><input type="text" name="age" id="age"
+																			 class="form-control"
+																			 value="${detailmember.age}">
+								</div>
+
+
+								<div class="form-group" style="text-align: center">
+									<c:set var="gender" value="${detailmember.gender.trim()}"/>
+									<input type="radio" name="gender" id="gender" value="여"
+										   <c:if test="${gender eq '여'}">checked</c:if>>Female
+									<input type="radio" name="gender" id="gender" value="남" style="margin-left: 35px"
+										   <c:if test="${gender eq '남'}">checked</c:if>>Male
+								</div>
+
+								<div class="form-group">
+									<span class="form-name">Email</span><input type="text" name="email" id="email"
+																			   class="form-control"
+																			   value="${detailmember.email}">
+								</div>
+
+								<div class="form-group">
+									<input type="submit" class="form-control btn btn-primary submit px-3" value="Edit">
+									<a href='KoreaMemberList.do'>Member List</a>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-			</div>
 		</section>
 		<footer class="footer">
 			<jsp:include page="/common/Bottom.jsp"/>
@@ -130,4 +119,5 @@
 <script src="${pageContext.request.contextPath}/assets/js/light-bootstrap-dashboard.js?v=2.0.0"
 		type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/assets/js/script.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </html>
