@@ -31,7 +31,8 @@ public class MainService implements Action {
             } else {
                 //로그인 하지 않은 사용자
                 //메인 페이지는 회원만 볼수 있어요 (강제 링크 추가)
-                request.setAttribute("text", "사이트 방문을 환영합니다 ^^<br>회원가입 좀 하지 ...");
+                request.setAttribute("text", "JOIN US");
+                request.setAttribute("link", "<a href='KoreaMemberLoginForm.do'>JOIN US</a>");
             }
         } catch (IOException e) {
             e.printStackTrace();

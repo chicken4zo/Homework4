@@ -16,6 +16,7 @@ public class KoreaMemberDetail extends HttpServlet {
     protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         KoreaMemberDao dao = new KoreaMemberDao();
         response.setCharacterEncoding("UTF-8");
+        System.out.println("detail!");
         System.out.println(request.getParameter("id"));
         KoreaMemberDto kdto = dao.detailMember(request.getParameter("id"));
         PrintWriter out = response.getWriter();

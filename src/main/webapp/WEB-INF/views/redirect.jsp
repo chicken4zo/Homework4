@@ -1,16 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%
-    String msg = (String) request.getAttribute("board_msg");
-    String url = (String) request.getAttribute("board_url");
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="msg" value="${requestScope.board_msg}"/>
+<c:set var="url" value="${requestScope.board_url}"/>
 
-    if (msg != null && url != null) {
-%>
 <script>
-	alert('<%= msg %>');
-	location.href = '<%=url%>';
+	alert('${msg}');
+	location.href = '${url}';
 </script>
-
-<%
-    }
-%>

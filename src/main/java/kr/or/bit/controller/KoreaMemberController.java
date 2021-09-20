@@ -28,7 +28,7 @@ public class KoreaMemberController extends HttpServlet {
             forward = action.execute(request, response);
             System.out.println("KoreaMemberJoin Start");
         } else if (url_Command.equals("/KoreaMemberDelete.do")) {
-//UI+로직
+            //UI+로직
             action = new KoreaMemberDeleteService();
             forward = action.execute(request, response);
             System.out.println("MemoDeleteService 실행");

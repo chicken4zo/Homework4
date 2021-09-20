@@ -65,7 +65,7 @@
 						</c:forEach>
 
 					</table>
-					<form id="searhForm">
+					<form id="searchForm">
 						회원명:<input type="text" name="search" id="search">
 						<input type="button" id="submit" value="검색">
 					</form>
@@ -106,7 +106,7 @@
 <script type="text/javascript">
 
 	$('#submit').click(function () {
-		const formData = $('#searhForm').serialize();
+		const formData = $('#searchForm').serialize();
 		$.ajax(
 				{
 					url: "SearchMember",
@@ -128,11 +128,11 @@
 	});
 
 	$('.memberId').click(function () {
+		console.log($(this).text());
 		$.ajax(
 				{
-					url: "KoreaMemberDetail",
+					url: "KoreaMemberDetail?id=" + $(this).text(),
 					type: "GET",
-					data: $(this).val(),
 					success: function (data) {
 						$('.detailModalContent').html(data);
 						$('.detailModal').fadeIn();

@@ -1,19 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<!--
-=========================================================
-Light Bootstrap Dashboard - v2.0.1
-=========================================================
-
-Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard
-Copyright 2019 Creative Tim (https://www.creative-tim.com)
-Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE)
-
-Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -37,7 +23,7 @@ The above copyright notice and this permission notice shall be included in all c
     <!--여기서부터 긁으면된다-->
     <div class="main-panel">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <jsp:include page="/common/Top.jsp"/>
             </div>
@@ -59,7 +45,6 @@ The above copyright notice and this permission notice shall be included in all c
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Username" name="id" id="id"
                                            required>
-                                    <sp
                                 </div>
                                 <div class="form-group">
                                     <input id="password-field" type="password" class="form-control"
@@ -93,6 +78,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     Already have an account? <a href="KoreaMemberLoginForm.do"
                                                                 style="color: #fff">Login</a>
                                 </div>
+                            </form>
                         </div>
                     </div>
                 </div>

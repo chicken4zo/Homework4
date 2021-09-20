@@ -93,10 +93,4 @@
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/script.js"></script>
-<script type="text/javascript">
-	$(document).ready(function () {
-		demo.showNotification();
-		$(location).attr('href', "Main.do");
-	});
-</script>
 </html>

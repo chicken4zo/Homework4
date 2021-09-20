@@ -1,4 +1,10 @@
-if (session.getAttribute("userid") == null || !session.getAttribute("userid").equals("admin")) {
+const register = document.getElementById("register");
+const welcome = document.querySelector(".welcome");
+console.log(welcome.getAttribute("id"));
+
+if (!(welcome.getAttribute("id") === "admin")) {
 	//강제로 페이지 이동
-	out.print("<script>location.href='KoreaMemberLoginForm.do'</script>");
+	location.href = 'KoreaMemberLoginForm.do';
 }
+
+

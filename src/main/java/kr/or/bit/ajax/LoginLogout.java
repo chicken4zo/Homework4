@@ -16,15 +16,37 @@ public class LoginLogout extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String id = (String) session.getAttribute("userid");
         PrintWriter out = response.getWriter();
-        System.out.println("loginlogout!!");
+//        System.out.println("loginlogout!!");
 
         if (id != null) {
+            out.print("<li class=\"nav-item\">");
+            out.print("<span class=\"no-icon welcome\" id=" + id + ">");
             out.print("<b>" + id + "</b> 님 환영합니다   ");
-            out.print("<a href='common/logout.jsp' id='loginlogout' class=" + id + ">Log out</a>");
+            out.print("<a href='common/logout.jsp'>Log out</a>");
+            out.print("</span></a></li>");
         } else {
-            out.print("<a href='KoreaMemberLoginForm.do' id='loginlogout'>Log in</a>");
+            out.print("<li class=\"nav-item\" id=\"register\">");
+            out.print("<a class=\"nav-link\" href=\"KoreaMemberJoinForm.do\">");
+            out.print("<span class=\"no-icon\">Register</span>");
+            out.print("</a></li>");
+            out.print("<li class=\"nav-item\">");
+            out.print("<span class=\"no-icon\">");
+            out.print("<a class=\"nav-link\" href=\"#\">");
+            out.print("<a href='KoreaMemberLoginForm.do'>Log in</a>");
+            out.print("</span></a></li>");
         }
     }
+
+//    <li class="nav-item" id="register">
+//            <a class="nav-link" href="KoreaMemberJoinForm.do">
+//                <span class="no-icon">Register</span>
+//            </a>
+//        </li>
+//        <li class="nav-item">
+//            <a class="nav-link" href="#">
+//                <span class="no-icon" id="loginlogout"></span>
+//            </a>
+//        </li>
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
